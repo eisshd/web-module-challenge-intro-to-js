@@ -19,8 +19,9 @@ Do the following:
 
    HINT: no function required
 */
-
-
+let votingAge = Math.floor(Math.random() * 36)
+if  (votingAge >= 18){
+  console.log ("1a", "Voting Age" ,votingAge)}
 
 /*
 Task 1b - Values (not auto tested)
@@ -33,11 +34,12 @@ Do the following:
 
    HINT: no function required
 */
-
-
-
-
-
+let thingOne = Math.floor(Math.random()* 3)
+let thingTwo = Math.floor(Math.random()* 3)
+if  (thingOne === thingTwo){
+  thingOne = 1
+  console.log ("1b", "They're Equal", thingOne)
+  }
 /*
 Task 1c - Convert Strings to Numbers (not auto tested)
 
@@ -48,10 +50,9 @@ Do the following:
 
    HINT: look up the Number method
 */
-
-
-
-
+let that = '1999'
+that = 1999
+console.log ("1c", that)
 /*
 Task 1d - Multiply
  
@@ -64,8 +65,7 @@ Do the following:
 function multiply(num1, num2){
   return num1 * num2;
 }
-
-
+console.log ("1d", multiply(5, 5))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -77,11 +77,10 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(age){
+  return age * 7;
 }
-
-
+console.log ("T2", dogYears(3))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -129,10 +128,29 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
         So, on this one test, the weight would be 4 pounds, and the age would be 1 years old. It's expecting your function to return a decimal number of 0.2
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(pounds, years){
+  if (years >= 1 && pounds <= 5) {
+      return pounds * .05;
+  } else if (years >=1 && pounds >=6 && pounds <=10){
+      return pounds * .04;
+  }
+    else if (years >=1 && pounds >=11 && pounds <=15){
+      return pounds * .03;
+  }
+    else if (years >=1 && pounds >15){
+      return pounds * .02;
+  }
+    else if (years >= .166 && years <= .33){
+      return pounds * .1;
+  }
+    else if (years >= .416 && years <= .583){
+      return pounds * .05;
+  }
+    else if (years >= .66 && years <= 1){
+      return pounds * .04;
+  }
 }
-
+console.log ("T3", hungryDog(15, 1))
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -155,12 +173,23 @@ Use the game function below to do the following:
 
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
+let computer = Math.floor(Math.random() * 2)
+    if(computer = 0){
+        computer = `rock`
+    } else if (computer = 1){
+        computer = `paper`
+    } else if (computer = 2) {
+        computer = `scissors`
+    }
 
 function game(user, computer){
-  /*add your code here*/
+  if (user === `scissors` && computer === `paper` || user === `paper` && computer === `rock` || user === `rock` && computer === `scissors` ){
+    return `you win!`;
+    } else if (user === computer){
+    return `it's a tie`
+    } else return `you lose!`
 }
-
-
+console.log ("T4:", computer, game(`rock`, computer))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -173,10 +202,10 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(kilometers){
+ return kilometers * .621371
 }
-
+console.log ("T5a:", miles(15))
 
 
 //Task 5b - Centimeters to Feet
@@ -187,15 +216,15 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm){
+  return cm / 30.48
 }
-
+console.log ("T5b:", feet(5))
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
-// Let's Sing 99 Bottles of Soda on the Wall!
+// Let`s Sing 99 Bottles of Soda on the Wall!
 /*
 Using the annoyingSong function below do the following:
 1. Receive a starting number
@@ -207,10 +236,10 @@ Using the annoyingSong function below do the following:
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(num){
+    return `${num} bottles of soda on the wall, ${num} bottles of soda, take one down pass it around ${num - 1} bottles of soda on the wall`;
 }
-
+console.log ("T6:", annoyingSong(5))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -227,10 +256,20 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(percent){
+  if (percent >= 90 || percent >= 100){
+    return `you got an A`
+  } else if (percent >= 80 || percent >= 89) {
+    return `you got a B`
+  } else if (percent >= 70 || percent >= 79) {
+    return `you got a C`
+  } else if (percent >= 60 || percent >= 69) {
+    return `you got a D`
+  } else if (percent <= 69) {
+    return `you got an F`
 }
-
+}
+console.log ("T7:", grade(75))
 
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
@@ -246,10 +285,8 @@ HINT - try looking up the .includes() method
 */
 
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+function vowelCounter() {
 }
-
 
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
